@@ -30,7 +30,7 @@
     </dependency>
     <dependency>
     	<groupId>com.h2o</groupId>
-    	<artifactId>h2o-genmodel</artifactId>
+    	<artifactId>h2o-genmodel.jar</artifactId>
     	<version>0.1</version>
     </dependency>
   </dependencies>
