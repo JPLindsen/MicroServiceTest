@@ -24,19 +24,19 @@ public class Application {
     }
 
     @RequestMapping(value="/{AGE}/{RACE}/{PSA}/{GLEASON}",method = RequestMethod.GET)
-    public String hello( @PathVariable("AGE") Numeric AGE,
-                         @PathVariable("RACE") Numeric RACE,
-                         @PathVariable("PSA") Numeric PSA,
-                         @PathVariable("GLEASON") Numeric GLEASON) throws Exception {
+    public String hello( @PathVariable("AGE") String AGE,
+                         @PathVariable("RACE") String RACE,
+                         @PathVariable("PSA") String PSA,
+                         @PathVariable("GLEASON") String GLEASON) throws Exception {
     	
     	GLM_model_R_1511970560428_1 glmModel = new GLM_model_R_1511970560428_1(); // POJO model
         EasyPredictModelWrapper model = new EasyPredictModelWrapper(glmModel);
         
         RowData row = new RowData();
-         row.put("AGE", AGE);
-         row.put("RACE", RACE);
-         row.put("PSA", PSA);
-         row.put("GLEASON", GLEASON);
+         row.put("AGE", (Float.valueOf(AGE)).floatValue());
+         row.put("RACE", (Float.valueOf(RACE)).floatValue());
+         row.put("PSA", (Float.valueOf(PSA)).floatValue());
+         row.put("GLEASON", (Float.valueOf(GLEASON)).floatValue());
 
         BinomialModelPrediction p = model.predictBinomial(row);
 
