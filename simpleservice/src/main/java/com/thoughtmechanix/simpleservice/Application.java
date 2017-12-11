@@ -23,21 +23,23 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 
-    @RequestMapping(value="/{firstName}/{lastName}",method = RequestMethod.GET)
-    public String hello( @PathVariable("firstName") String firstName,
-                         @PathVariable("lastName") String lastName) throws Exception {
+    @RequestMapping(value="/{AGE}/{RACE}/{PSA}/{GLEASON}",method = RequestMethod.GET)
+    public String hello( @PathVariable("AGE") Float AGE,
+                         @PathVariable("RACE") Float RACE,
+                         @PathVariable("PSA") Float PSA,
+                         @PathVariable("GLEASON") Float GLEASON) throws Exception {
     	
     	GLM_model_R_1511970560428_1 glmModel = new GLM_model_R_1511970560428_1(); // POJO model
         EasyPredictModelWrapper model = new EasyPredictModelWrapper(glmModel);
         
         RowData row = new RowData();
-         row.put("AGE", 65.0);
-         row.put("RACE", 1.0);
-         row.put("PSA", 1.4);
-         row.put("GLEASON", 6.0);
+         row.put("AGE", AGE);
+         row.put("RACE", RACE);
+         row.put("PSA", PSA);
+         row.put("GLEASON", GLEASON);
 
         BinomialModelPrediction p = model.predictBinomial(row);
 
-        return String.format("{\"message\":\"Hello %s %s %4.3f\"}", firstName, lastName, p.classProbabilities[1]);
+        return String.format("{\"model output\":\"%4.3f\"}", p.classProbabilities[1]);
     }
 }
