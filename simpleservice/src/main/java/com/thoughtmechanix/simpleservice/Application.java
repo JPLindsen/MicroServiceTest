@@ -12,7 +12,7 @@ import hex.genmodel.easy.RowData;
 import hex.genmodel.easy.EasyPredictModelWrapper;
 import hex.genmodel.easy.prediction.*;
 //import model_test.GLM_model_R_1511970560428_1;
-import GLM_model_R_1511970560428_1;
+import com.thoughtmechanix.simpleservice.GLM_model_R_1511970560428_1;
 
 @SpringBootApplication
 @RestController
