@@ -25,7 +25,7 @@ public class Application {
 
     @RequestMapping(value="/{firstName}/{lastName}",method = RequestMethod.GET)
     public String hello( @PathVariable("firstName") String firstName,
-                         @PathVariable("lastName") String lastName) throws PredictException {
+                         @PathVariable("lastName") String lastName) throws Exception {
     	
     	GLM_model_R_1511970560428_1 glmModel = new GLM_model_R_1511970560428_1(); // POJO model
         EasyPredictModelWrapper model = new EasyPredictModelWrapper(glmModel);
