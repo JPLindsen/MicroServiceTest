@@ -32,11 +32,17 @@ public class Application {
     	GLM_model_R_1511970560428_1 glmModel = new GLM_model_R_1511970560428_1(); // POJO model
         EasyPredictModelWrapper model = new EasyPredictModelWrapper(glmModel);
         
+        double AGE_num = Double.parseDouble(AGE);
+        double RACE_num = Double.parseDouble(RACE);
+        double PSA_num = Double.parseDouble(PSA);
+        double GLEASON_num = Double.parseDouble(GLEASON);
+        
+        
         RowData row = new RowData();
-         row.put("AGE", (Float.valueOf(AGE)).floatValue());
-         row.put("RACE", (Float.valueOf(RACE)).floatValue());
-         row.put("PSA", (Float.valueOf(PSA)).floatValue());
-         row.put("GLEASON", (Float.valueOf(GLEASON)).floatValue());
+         row.put("AGE", AGE_num);
+         row.put("RACE", RACE_num);
+         row.put("PSA", PSA_num);
+         row.put("GLEASON", GLEASON_num);
 
         BinomialModelPrediction p = model.predictBinomial(row);
 
