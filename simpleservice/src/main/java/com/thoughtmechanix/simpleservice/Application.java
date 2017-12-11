@@ -24,10 +24,10 @@ public class Application {
     }
 
     @RequestMapping(value="/{AGE}/{RACE}/{PSA}/{GLEASON}",method = RequestMethod.GET)
-    public String hello( @PathVariable("AGE") Float AGE,
-                         @PathVariable("RACE") Float RACE,
-                         @PathVariable("PSA") Float PSA,
-                         @PathVariable("GLEASON") Float GLEASON) throws Exception {
+    public String hello( @PathVariable("AGE") Numeric AGE,
+                         @PathVariable("RACE") Numeric RACE,
+                         @PathVariable("PSA") Numeric PSA,
+                         @PathVariable("GLEASON") Numeric GLEASON) throws Exception {
     	
     	GLM_model_R_1511970560428_1 glmModel = new GLM_model_R_1511970560428_1(); // POJO model
         EasyPredictModelWrapper model = new EasyPredictModelWrapper(glmModel);
