@@ -26,6 +26,11 @@
     	<artifactId>h2o-genmodel</artifactId>
     	<version>0.1</version>
     </dependency>
+    <dependency>
+    	<groupId>com.model</groupId>
+    	<artifactId>my-RF-model</artifactId>
+    	<version>0.1</version>
+    </dependency>
   </dependencies>
 
   <properties>
