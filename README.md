@@ -23,3 +23,19 @@ change to the docker-compose directory in your chapter 1 source code.  Issue the
    **docker-compose -f docker/common/docker-compose.yml up**
 
 If everything starts correctly you should see a bunch of spring boot information fly by on standard out.  At this point all of the services needed for the chapter code examples will be running.
+
+
+# General steps to include H2O pojo in microservice
+- download H2O pojo and genmodel.jar
+- include genmodel.jar as follows:
+**mvn install:install-file –Dfile=C:\dev\app.jar -DgroupId=com.roufid.tutorials -DartifactId=example-app -Dversion=1.0**
+And add these lines to the project's pom.xml file:
+**<dependency>
+	<groupId>com.roufid.tutorials</groupId>
+	<artifactId>example-app</artifactId>
+	<version>1.0</version>
+</dependency>**
+- Add this line:
+**package com.thoughtmechanix.simpleservice;**
+to the top of the H2O pojo file
+- In main applicatoin file, update model name and align input-definition.
