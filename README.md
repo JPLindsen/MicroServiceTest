@@ -34,13 +34,13 @@ If everything starts correctly you should see a bunch of spring boot information
 
 And add these lines to the project's pom.xml file:
 
-'''xml
+```xml
 <dependency>
 	<groupId>com.roufid.tutorials</groupId>
 	<artifactId>example-app</artifactId>
 	<version>1.0</version>
 </dependency>
-'''
+```
 
 - Add this line:
 
