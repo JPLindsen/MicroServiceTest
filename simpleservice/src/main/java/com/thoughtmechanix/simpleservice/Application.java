@@ -16,7 +16,7 @@ import com.thoughtmechanix.simpleservice.GLM_model_R_1511970560428_1;
 
 @SpringBootApplication
 @RestController
-@RequestMapping(value="hello")
+@RequestMapping(value="inputs")
 public class Application {
 
     public static void main(String[] args) {
